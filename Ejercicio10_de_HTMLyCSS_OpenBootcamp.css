@@ -3,35 +3,33 @@
     padding: 0;
 }
 
-.contenedor {
-    position: relative;
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    font-size: 2rem;
 }
 
-.barra-lateral {
-    display: flex;
-    float: left;
+div.barra-lateral {
     background-color: antiquewhite;
-    height: 100vh;
-}
-
-.elemento {
-    padding: 0.5rem;
-    border: solid 0.5px black;
-}
-
-.seccion-principal {
     display: flex;
-    float: unset;
-    background-color: aquamarine;
-    height: 100vh;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+div.seccion-principal {
+    padding: 10px;
+    flex-grow: 1;
 }
 
 @media (max-width: 640px) {
-    .barra-lateral {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        width: 100vw;
-        top: 84.7%;
+    body {
+        flex-direction: column-reverse;
+    }
+
+    div.seccion-principal {
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 }
